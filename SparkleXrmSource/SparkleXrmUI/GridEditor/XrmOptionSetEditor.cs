@@ -45,11 +45,12 @@ namespace SparkleXrm.GridEditor
             // Get the option set values
             XrmOptionSetEditor self = this;
             OptionSetBindingOptions opts = (OptionSetBindingOptions)args.Column.Options;
-            if (_options == null)
-            {
-                _options = MetadataCache.GetOptionSetValues(opts.entityLogicalName, opts.attributeLogicalName, opts.allowEmpty); 
+            //prevent caching as this can cause the wrong dropdown menu to pull (particularly when there are 2+ sparklexrmgrids on the same html file.
+            //if (_options == null)
+            //{
+            _options = MetadataCache.GetOptionSetValues(opts.entityLogicalName, opts.attributeLogicalName, opts.allowEmpty); 
               
-            }
+            //}
          
             CreateSelect(self);
             

@@ -2872,9 +2872,7 @@ SparkleXrm.GridEditor.XrmOptionSetEditor = function SparkleXrm_GridEditor_XrmOpt
     SparkleXrm.GridEditor.XrmOptionSetEditor.initializeBase(this, [ args ]);
     var self = this;
     var opts = args.column.options;
-    if (SparkleXrm.GridEditor.XrmOptionSetEditor._options$1 == null) {
-        SparkleXrm.GridEditor.XrmOptionSetEditor._options$1 = Xrm.Sdk.Metadata.MetadataCache.getOptionSetValues(opts.entityLogicalName, opts.attributeLogicalName, opts.allowEmpty);
-    }
+    SparkleXrm.GridEditor.XrmOptionSetEditor._options$1 = Xrm.Sdk.Metadata.MetadataCache.getOptionSetValues(opts.entityLogicalName, opts.attributeLogicalName, opts.allowEmpty);
     this.createSelect(self);
 }
 SparkleXrm.GridEditor.XrmOptionSetEditor.formatter = function SparkleXrm_GridEditor_XrmOptionSetEditor$formatter(row, cell, value, columnDef, dataContext) {
